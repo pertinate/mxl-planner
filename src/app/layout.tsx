@@ -7,6 +7,7 @@ import { TRPCReactProvider } from '~/trpc/react';
 import { ThemeProvider } from '~/components/themeProvider';
 import { SessionProvider } from 'next-auth/react';
 import { auth } from '~/server/auth';
+import { TooltipProvider } from '~/components/ui/tooltip';
 
 export const metadata: Metadata = {
     title: 'MXL Planner',
@@ -32,7 +33,9 @@ export default async function RootLayout({
                         enableSystem
                         disableTransitionOnChange
                     >
-                        <TRPCReactProvider>{children}</TRPCReactProvider>
+                        <TooltipProvider>
+                            <TRPCReactProvider>{children}</TRPCReactProvider>
+                        </TooltipProvider>
                     </ThemeProvider>
                 </SessionProvider>
             </body>

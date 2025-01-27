@@ -20,7 +20,7 @@ export const SkillTreeSchema = z.object({
     skills: z.array(SkillSchema),
 });
 
-const StatsSchema = z.object({
+export const StatsSchema = z.object({
     strength: z.number(),
     dexterity: z.number(),
     vitality: z.number(),

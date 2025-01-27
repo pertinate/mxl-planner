@@ -1,4 +1,4 @@
-export const positionData: Record<
+export const paladinPositionData: Record<
     string,
     { rowStart: number; colStart: number }
 > = {

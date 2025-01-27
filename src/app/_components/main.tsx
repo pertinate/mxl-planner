@@ -1,12 +1,14 @@
 'use client';
 
 import { signIn, useSession } from 'next-auth/react';
-import { redirect, RedirectType } from 'next/navigation';
+import { redirect, RedirectType, useRouter } from 'next/navigation';
 import { Button } from '~/components/ui/button';
+import { api } from '~/trpc/react';
 
 export function Main() {
     const session = useSession();
-    console.log(session);
+    const plannerCreate = api.planner.create.useMutation();
+    const router = useRouter();
     return (
         <main className='flex h-full items-center justify-center'>
             {
@@ -23,6 +25,13 @@ export function Main() {
                                 RedirectType.push
                             );
                         }
+
+                        plannerCreate
+                            .mutateAsync()
+                            .then(id => {
+                                router.push(`/planners/${id}`);
+                            })
+                            .catch(console.error);
                     }}
                 >
                     Create New
