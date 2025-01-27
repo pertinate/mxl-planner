@@ -1,5 +1,3 @@
-import { z } from 'zod';
-import { StatsSchema } from '~/planner/characterSchema';
 import { useBuilderStore } from '~/zustand/builderProvider';
 import { Button } from './ui/button';
 import { Label } from './ui/label';

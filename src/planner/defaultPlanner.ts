@@ -1,6 +1,6 @@
-import { z } from 'zod';
+import { type z } from 'zod';
 import { getSkillTree } from './characters';
-import { PlannerSchema } from './characterSchema';
+import { type PlannerSchema } from './characterSchema';
 
 const defaultPlanner: z.infer<typeof PlannerSchema> = {
     name: 'Default Planner',

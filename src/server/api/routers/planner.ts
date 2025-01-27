@@ -1,9 +1,8 @@
 import { TRPCError } from '@trpc/server';
 import { z } from 'zod';
-import { getSkillTree } from '~/planner/characters';
 import {
     CharacterDataSchema,
-    CharacterSchema,
+    type CharacterSchema,
     PlannerSchema,
 } from '~/planner/characterSchema';
 import defaultPlanner from '~/planner/defaultPlanner';

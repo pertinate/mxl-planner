@@ -8,8 +8,8 @@ import { ButtonGroup } from './ui/buttonGroup';
 import { Button } from './ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import { getPositionData } from '~/planner/characters';
-import { SkillSchema } from '~/planner/characterSchema';
-import { z } from 'zod';
+import { type SkillSchema } from '~/planner/characterSchema';
+import { type z } from 'zod';
 
 type Props = {
     // rowStart: number;

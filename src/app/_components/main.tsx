@@ -1,6 +1,6 @@
 'use client';
 
-import { signIn, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { redirect, RedirectType, useRouter } from 'next/navigation';
 import { Button } from '~/components/ui/button';
 import { api } from '~/trpc/react';

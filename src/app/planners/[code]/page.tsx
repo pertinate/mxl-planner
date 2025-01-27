@@ -1,30 +1,19 @@
 import { redirect } from 'next/navigation';
 import CharacterDropdown from '~/components/characterDropdown';
 import CharacterStats from '~/components/characterStats';
-import Skill from '~/components/skill';
 import SkillTree from '~/components/skillTree';
 import { Button } from '~/components/ui/button';
 import { ButtonGroup } from '~/components/ui/buttonGroup';
-import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from '~/components/ui/dropdown-menu';
+import { Card, CardHeader, CardTitle } from '~/components/ui/card';
 import { Label } from '~/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '~/components/ui/tabs';
 import { ToggleGroup, ToggleGroupItem } from '~/components/ui/toggle-group';
-import { CharacterSchema } from '~/planner/characterSchema';
 import { api } from '~/trpc/server';
 import { BuilderStoreProvider } from '~/zustand/builderProvider';
 
 export default async function Page({
     params: Params,
 }: Readonly<{
-    children: React.ReactNode;
     params: Promise<{ code: string }>;
 }>) {
     const params = await Params;

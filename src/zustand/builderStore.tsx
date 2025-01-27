@@ -3,11 +3,11 @@ import { createStore } from 'zustand/vanilla';
 import * as O from 'optics-ts';
 import defaultPlanner from '~/planner/defaultPlanner';
 import {
-    CharacterSchema,
-    PlannerSchema,
-    StatsSchema,
+    type CharacterSchema,
+    type PlannerSchema,
+    type StatsSchema,
 } from '~/planner/characterSchema';
-import { z } from 'zod';
+import { type z } from 'zod';
 
 export type BuilderState = z.infer<typeof PlannerSchema>;
 
