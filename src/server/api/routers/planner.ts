@@ -18,6 +18,7 @@ export const plannersRouter = createTRPCRouter({
     create: protectedProcedure
         .input(PlannerSchema.default(defaultPlanner))
         .mutation(async ({ ctx, input }) => {
+            return;
             const execute = await ctx.db.insert(planners).values({
                 name: input.name,
                 character: input.character,
