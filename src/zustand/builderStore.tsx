@@ -16,6 +16,7 @@ export type BuilderActions = {
     decrementSkillLevel: (tree: number, skill: number) => void;
     incrementCharacterLevel: () => void;
     decrementCharacterLevel: () => void;
+    setCharacterLevel: (level: number) => void;
     changeCharacter: (character: z.infer<typeof CharacterSchema>) => void;
     reduceCharacterStat: (
         stat: keyof z.infer<typeof StatsSchema>,
@@ -131,6 +132,12 @@ export const createCounterStore = (
             return set(
                 O.modify(lens)(signetCount => Math.max(0, signetCount - value))
             );
+        },
+        setCharacterLevel(level) {
+            const lens = O.optic<BuilderState>()
+                .prop('characterData')
+                .prop('level');
+            return set(O.modify(lens)(() => Math.max(0, level)));
         },
     }));
 };

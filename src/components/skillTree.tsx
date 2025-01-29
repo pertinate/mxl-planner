@@ -23,7 +23,7 @@ const SkillTree = () => {
     }, [planner.character]);
 
     return (
-        <Card className=''>
+        <Card className='h-fit min-h-full'>
             <CardHeader>
                 <CardTitle>Skills</CardTitle>
             </CardHeader>

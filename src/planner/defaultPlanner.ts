@@ -37,6 +37,7 @@ const defaultPlanner: z.infer<typeof PlannerSchema> = {
                 signetOfSkill: false,
             },
         },
+        statQuests: { normal: false, nightmare: false, hell: false },
         totalSignets: 0,
         totalStatPoints: 0,
         totalSkillPoints: 0,

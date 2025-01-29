@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation';
 import CharacterDropdown from '~/components/characterDropdown';
+import CharacterLevel from '~/components/characterLevel';
 import CharacterStats from '~/components/characterStats';
 import SkillTree from '~/components/skillTree';
 import { Button } from '~/components/ui/button';
@@ -60,10 +61,7 @@ export default async function Page({
                                     <div className='flex w-fit flex-col items-center justify-center gap-4'>
                                         <CharacterDropdown />
                                         <div>
-                                            <Label>
-                                                Level:{' '}
-                                                {planner.characterData.level}
-                                            </Label>
+                                            <CharacterLevel />
                                         </div>
                                         <CharacterStats />
                                     </div>

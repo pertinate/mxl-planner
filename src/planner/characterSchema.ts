@@ -36,6 +36,13 @@ export const CharacterDataSchema = z.object({
         nightmare: quests,
         hell: z.union([quests, z.object({ signetOfSkill: z.boolean() })]),
     }),
+    statQuests: z
+        .object({
+            normal: z.boolean(),
+            nightmare: z.boolean(),
+            hell: z.boolean(),
+        })
+        .default({ normal: false, nightmare: false, hell: false }),
     totalSignets: z.number(),
     totalStatPoints: z.number(),
     totalSkillPoints: z.number(),
